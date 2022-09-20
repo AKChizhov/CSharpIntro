@@ -1,14 +1,28 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-Task t = new Task(new Action(() => {
-
-while(true)
+﻿Console.Clear();
+Console.WriteLine("Здравствуй пользователь ! ");
+int Input()
 {
-   Console.Beep();
-   Console.WriteLine("Press any key to stop it...");
-   Thread.Sleep(500);
+    Console.Write("Введи число -+ 999 :   ");//Обработка вводимого 
+    int enter;
+    Int32.TryParse(Console.ReadLine(), out enter);
+    return enter;
 }
-}));
-t.Start();
-Console.WriteLine("Hello!!!");
-Console.ReadKey();
+
+while (true)
+{
+    int n = Input();
+
+    if (n >= -999 && n <= 999)//Проверка вводимого
+    {
+        if (n / 100 != 0)
+        {
+            Console.WriteLine(n+"     -третья  цифра введенного числа :  " + Math.Abs(n % 10));
+        }
+        else
+        {
+            Console.WriteLine(n+"     -третьей цифры нет");
+        }
+        break;
+    }
+    Console.Beep();//Звуковой сигнал при неправильном вводе
+}
