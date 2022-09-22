@@ -1,28 +1,24 @@
 ﻿Console.Clear();
 Console.WriteLine("Здравствуй пользователь ! ");
-int Input()
+Console.Write("Введи число: ");
+
+int n;
+while (!int.TryParse(Console.ReadLine(), out n))//Проверка вводимого
 {
-    Console.Write("Введи число -+ 999 :   ");//Обработка вводимого 
-    int enter;
-    Int32.TryParse(Console.ReadLine(), out enter);
-    return enter;
+    Console.Beep();//Звуковой сигнал при неправильном вводе
+    Console.Write("Неправильный ввод \n" + "Введите число: ");
 }
 
-while (true)
+int nn = n;
+while (nn / 1000 != 0)
 {
-    int n = Input();
-
-    if (n >= -999 && n <= 999)//Проверка вводимого
-    {
-        if (n / 100 != 0)
-        {
-            Console.WriteLine(n+"     -третья  цифра введенного числа :  " + Math.Abs(n % 10));
-        }
-        else
-        {
-            Console.WriteLine(n+"     -третьей цифры нет");
-        }
-        break;
-    }
-    Console.Beep();//Звуковой сигнал при неправильном вводе
+    nn = nn / 10;
+}
+if (n / 100 != 0)
+{
+    Console.WriteLine("Третья цифра введенного числа" + n + " равна :  " + nn % 10);
+}
+else
+{
+    Console.WriteLine("Третьeй цифры в введенном числе " + n + "  нет ");
 }
