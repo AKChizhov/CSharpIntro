@@ -38,7 +38,7 @@ void PrintArray(int[] array, int index)//Вывод массива
     int i = 0;
     while (i < index)
     {
-        if (array[i] != 0) Console.Write("\t " + array[i]);
+        Console.Write("\t" + array[i]);
         i++;
     }
     Console.WriteLine();
@@ -61,7 +61,6 @@ int[] Analiz(int[] arrayIn, int[] arrayOut, int index)//Поиск четных 
     return arrayOut;
 }
 
-
 int size = GetArraySize(10, 21);
 int[] data = CreateArray(size);
 Definition(data, size);
@@ -70,5 +69,5 @@ PrintArray(data, size);
 int[] result = CreateArray(size + 1);
 result = Analiz(data, result, size);
 Console.WriteLine("\n\tВ анализируемом массиве трехзначных чисел  " + result[size] + " четных чисел. Это :");
-PrintArray(result, size);
+PrintArray(result, result[size]);
 Console.WriteLine();
