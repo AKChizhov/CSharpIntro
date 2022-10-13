@@ -14,7 +14,7 @@ int x = 10;
 int y = 2;
 
 // Логика отрисовки всего
-new Thread(() =>
+new Task(() =>
 {
   while (true)
   {
