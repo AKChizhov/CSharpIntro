@@ -25,12 +25,21 @@ string[] FillWordsArray(string[] array)
             int temp =new Random().Next(48,111);
             array[i] = string.Concat(array[i] + Convert.ToChar(temp));
         }
-        Console.Write("\t" + array[i]);
     }
     return array;
 }
-
+ 
+void PrintArray(string[] array)
+{
+    int size=array.Length;
+    Console.WriteLine();
+    for(int i=0;i<size;i++)
+    {
+        Console.Write("   "+array[i]);
+    }
+} 
 
 int wordsNumber = CreateNumber(5, 16);
 string[] ourWordsArray = CreateWordsArray(wordsNumber);
 ourWordsArray=FillWordsArray(ourWordsArray);
+PrintArray(ourWordsArray);
