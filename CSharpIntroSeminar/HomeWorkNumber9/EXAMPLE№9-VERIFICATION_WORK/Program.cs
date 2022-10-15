@@ -48,7 +48,6 @@ void PrintArray(string[] array)//вывод массива
 string[] ModifArray(string[] array)//Преобразование массива в массив не содержащий цифры
 {
     string[] number = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-    int index = 0;
     int size = array.GetLength(0);
     for (int i = 0; i < size; i++)
     {
@@ -61,7 +60,6 @@ string[] ModifArray(string[] array)//Преобразование массива
                     array[i] = array[i].Replace(number[j], "");
                 }
             }
-            index++;
         }
     }
     return array;
