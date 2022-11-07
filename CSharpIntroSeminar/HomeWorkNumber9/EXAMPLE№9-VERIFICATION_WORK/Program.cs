@@ -48,7 +48,7 @@ void PrintArray(string[] array)//вывод массива
 string[] ModifArray(string[] array)//Преобразование массива в массив не содержащий цифры
 {
     string[] number = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-    int size = array.GetLength(0);
+    int size = array.Length;
     for (int i = 0; i < size; i++)
     {
         foreach (char aa in array[i])
