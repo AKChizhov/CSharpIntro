@@ -79,3 +79,4 @@ ourWordsArray = ModifArray(ourWordsArray);
 Console.ForegroundColor = ConsoleColor.Green;
 PrintArray(ourWordsArray);
 Console.WriteLine();
+Console.ReadKey();
