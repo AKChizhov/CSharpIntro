@@ -19,6 +19,38 @@ string[] CreateWordsArray(int size)//Создание массива опред�
     return new string[size];
 }
 
+string[] FillWordsArray(string[] array,int min, int max)//Заполнение массива символами, в том числе и цифрами;
+{
+    int wordsNumer = array.Length;
+    for (int i = 0; i < wordsNumer; i++)
+    {
+        int wordsSize = new Random().Next(min, max);
+        array[i] = "";
+        for (int j = 0; j < wordsSize; j++)
+        {
+            int temp = new Random().Next(48, 111);
+            array[i] = string.Concat(array[i] + Convert.ToChar(temp));
+        }
+    }
+    return array;
+}
+
+void PrintArray(string[] array)//вывод массива
+{
+    int size = array.Length;
+    Console.WriteLine();
+    for (int i = 0; i < size; i++)
+    {
+        Console.Write("   " + array[i]);
+    }
+}
+
+
 int wordsNumber = CreateNumber(5, 16);//Для наглядности на экране
-Console.WriteLine("\n\tСоздан массив из "+wordsNumber+" строк (возможно с 5 по 15), в каждой из которых возможно с 1 по 21 символов"+
+Console.WriteLine("\n\tСоздан массив из "+wordsNumber+" строк ( с 5 по 15 для наглядности), в каждой из которых возможно с 1 по 21 символов"+
 "\n\tСимволы задаются кодами клавиш клавиатуры с 48 по 110");
+string[] ourWordsArray = CreateWordsArray(wordsNumber);
+Console.ForegroundColor = ConsoleColor.Red;
+ourWordsArray = FillWordsArray(ourWordsArray,3,8);//Для наглядности на экране
+PrintArray(ourWordsArray);
+Console.ForegroundColor = ConsoleColor.White;
