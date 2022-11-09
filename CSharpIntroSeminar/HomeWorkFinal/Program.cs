@@ -13,3 +13,7 @@ int CreateNumber(int min, int max)//Определение количества 
 {
     return new Random().Next(min, max);
 }
+
+int wordsNumber = CreateNumber(5, 16);//Для наглядности на экране
+Console.WriteLine("\n\tСоздан массив из "+wordsNumber+" строк (возможно с 5 по 15), в каждой из которых возможно с 1 по 21 символов"+
+"\n\tСимволы задаются кодами клавиш клавиатуры с 48 по 110");
