@@ -58,7 +58,7 @@ int CountMinThan4(string[] array)//Определение количества �
     return count;
 }
 
-string[] FillModifWordsArray(string[] arrayIn, string[] arrayOut, int sizeOut)//Заполнение массива строками длиной от 1 по 3 символа
+string[] FillModifWordsArray(string[] arrayIn, string[] arrayOut)//Заполнение массива строками длиной от 1 по 3 символа
 {
     int j = 0;
     int size = arrayIn.Length;
@@ -86,6 +86,6 @@ int ourCount = CountMinThan4(ourWordsArray);
 Console.WriteLine("\n\n\tСоздан массив из " + ourCount + " строк исходного массива. Длина строки не больше 3-х символов.");
 Console.ForegroundColor = ConsoleColor.Green;
 string[] ourModifWordsArray = CreateWordsArray(ourCount);
-ourModifWordsArray = FillModifWordsArray(ourWordsArray, ourModifWordsArray, ourCount);
+ourModifWordsArray = FillModifWordsArray(ourWordsArray, ourModifWordsArray);
 PrintArray(ourModifWordsArray);
 Console.WriteLine();
