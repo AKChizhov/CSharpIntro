@@ -76,5 +76,6 @@ PrintArray(shop,resultPeople);
 Console.WriteLine("\tМаксимальное количество покупателей ( " + shop[maxInTime] + " ) из " +resultPeople+" пришедших за день было с " +
  (maxInTime + 8) + " час. по " + (maxInTime + 9) + " час.");
 Console.WriteLine();
+Console.ReadKey();
 
 
