@@ -19,7 +19,7 @@ string[] CreateWordsArray(int size)//Создание массива опред�
     return new string[size];
 }
 
-string[] FillWordsArray(string[] array,int min, int max)//Заполнение массива символами, в том числе и цифрами;
+string[] FillWordsArray(string[] array, int min, int max)//Заполнение массива символами, в том числе и цифрами;
 {
     int wordsNumer = array.Length;
     for (int i = 0; i < wordsNumer; i++)
@@ -45,12 +45,50 @@ void PrintArray(string[] array)//вывод массива
     }
 }
 
+int CountMinThan4(string[] array)
+{
+    int size = array.Length;
+    int count = 0;
+    for (int i = 0; i < size; i++)
+    {
+        if( array[i].Length <=3) count++;
+    }
+    return count;
+}
+
+
+
+/*
+
+string[] ModifArray(string[] array)//Преобразование массива в массив не содержащий цифры
+{
+    string[] number = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+    int size = array.Length;
+    for (int i = 0; i < size; i++)
+    {
+        foreach (char aa in array[i])
+        {
+            for (int j = 0; j <= 9; j++)
+            {
+                if (aa == Convert.ToChar(number[j]))
+                {
+                    array[i] = array[i].Replace(number[j], "");
+                }
+            }
+        }
+    }
+    return array;
+}
+*/
+
 
 int wordsNumber = CreateNumber(5, 16);//Для наглядности на экране
-Console.WriteLine("\n\tСоздан массив из "+wordsNumber+" строк ( с 5 по 15 для наглядности), в каждой из которых возможно с 1 по 21 символов"+
+Console.WriteLine("\n\tСоздан массив из " + wordsNumber + " строк ( с 5 по 15 для наглядности), в каждой из которых возможно с 1 по 21 символов" +
 "\n\tСимволы задаются кодами клавиш клавиатуры с 48 по 110");
 string[] ourWordsArray = CreateWordsArray(wordsNumber);
 Console.ForegroundColor = ConsoleColor.Red;
-ourWordsArray = FillWordsArray(ourWordsArray,3,8);//Для наглядности на экране
+ourWordsArray = FillWordsArray(ourWordsArray, 3, 8);//Для наглядности на экране
 PrintArray(ourWordsArray);
 Console.ForegroundColor = ConsoleColor.White;
+int ourCount = CountMinThan4(ourWordsArray);
+Console.WriteLine("\n\t"+ourCount);
