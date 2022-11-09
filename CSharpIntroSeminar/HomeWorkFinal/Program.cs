@@ -58,28 +58,7 @@ int CountMinThan4(string[] array)
 
 
 
-/*
 
-string[] ModifArray(string[] array)//Преобразование массива в массив не содержащий цифры
-{
-    string[] number = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-    int size = array.Length;
-    for (int i = 0; i < size; i++)
-    {
-        foreach (char aa in array[i])
-        {
-            for (int j = 0; j <= 9; j++)
-            {
-                if (aa == Convert.ToChar(number[j]))
-                {
-                    array[i] = array[i].Replace(number[j], "");
-                }
-            }
-        }
-    }
-    return array;
-}
-*/
 
 
 int wordsNumber = CreateNumber(5, 16);//Для наглядности на экране
